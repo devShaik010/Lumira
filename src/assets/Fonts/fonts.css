@@ -1,0 +1,60 @@
+@font-face {
+  font-family: 'AICON-Regular';
+  src: url('./AICON-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'AICON-Medium';
+  src: url('./AICON-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'AICON-SemiBold';
+  src: url('./AICON-SemiBold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'AICON-Bold';
+  src: url('./AICON-Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'AICON-ExtraBold';
+  src: url('./AICON-ExtraBold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Font utility classes */
+.font-aicon-regular {
+  font-family: 'AICON-Regular', system-ui, sans-serif;
+}
+
+.font-aicon-medium {
+  font-family: 'AICON-Medium', system-ui, sans-serif;
+}
+
+.font-aicon-semibold {
+  font-family: 'AICON-SemiBold', system-ui, sans-serif;
+}
+
+.font-aicon-bold {
+  font-family: 'AICON-Bold', system-ui, sans-serif;
+}
+
+.font-aicon-extrabold {
+  font-family: 'AICON-ExtraBold', system-ui, sans-serif;
+}
