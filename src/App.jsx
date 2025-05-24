@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import LumiraLogo from '@assets/Lumira.svg';
 import '@assets/Fonts/fonts.css';
-import './App.css';
+import Navbar from '@components/Navbar';
+import Footer from '@components/Footer';
 
 // Text for technologies
 const techItems = ["AI", "Cloud Computing", "Security"];
@@ -10,86 +11,101 @@ function App() {
   const [email, setEmail] = useState("");
 
   return (
-    <div className="bg-black h-screen w-screen flex flex-col text-white overflow-hidden relative">
-      {/* Animated gradient background */}
-      <div className="gradient-bg-animation">
-        <div className="gradient-1"></div>
-        <div className="gradient-2"></div>
-        <div className="gradient-3"></div>
-      </div>
-      
-      <div className="px-4 md:px-6 py-4 md:py-6 flex flex-col h-full relative z-10">
-        {/* Logo/Branding */}
-        <div className="flex justify-center mb-2 md:mb-4">
-          {/* <img src={LumiraLogo} alt="Lumira" className="h-8 md:h-10" /> */}
-        </div>
-      
-        {/* Main content */}
-        <main className="flex-1 flex flex-col items-center justify-center max-w-4xl mx-auto w-full">
-          {/* Headline section */}
-          <div className="text-center mb-4 md:mb-6">
-            <h1 className="text-5xl md:text-7xl font-bold tracking-wider mb-2 md:mb-4 font-aicon-bold main-title">
-              LUMIRA
-            </h1>
-            
-            <p className="text-lg md:text-xl text-gray-300">
-              The future of technology training
-            </p>
+    <div className="bg-black text-white overflow-hidden relative min-h-screen flex flex-col">
+      {/* Animated gradient background removed */}
+
+      <Navbar />
+
+      <main className="flex-1 relative z-10">
+        {/* Hero Section */}
+        <section id="hero" className="h-screen flex flex-col items-center justify-center text-center px-4 py-20 min-h-screen">
+          <h1 className="text-5xl md:text-7xl font-bold tracking-wider mb-2 md:mb-4 font-aicon-bold text-transparent bg-clip-text bg-gradient-to-r from-gray-200 via-white to-gray-400 drop-shadow-lg">
+            LUMIRA
+          </h1>
+          <p className="text-lg md:text-xl text-gray-300 mb-8">
+            The future of technology training
+          </p>
+          <div className="flex flex-wrap gap-3 justify-center mb-8">
+            {techItems.map((tech) => (
+              <span
+                key={tech}
+                className="text-sm md:text-base px-3 py-1 md:px-4 md:py-2 bg-black/40 backdrop-blur-sm rounded-full text-gray-200 border border-gray-600 hover:bg-black/60 transition duration-300"
+              >
+                {tech}
+              </span>
+            ))}
           </div>
-          
-          {/* Launch info */}
-          <div className="text-center mb-4 md:mb-6 w-full">
-            <div className="text-xl md:text-2xl mb-3 md:mb-4 tracking-wide text-white">Launching Soon</div>
-            
-            <div className="flex flex-wrap gap-3 justify-center">
-              {techItems.map((tech) => (
-                <span
-                  key={tech}
-                  className="tech-pill text-sm md:text-base px-3 py-1 md:px-4 md:py-2 bg-black/40 backdrop-blur-sm rounded-full text-gray-200"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
-          </div>
-          
-          {/* Notify form */}
-          <div className="w-full max-w-sm md:max-w-md mb-4">
+          <div className="w-full max-w-sm md:max-w-md">
             <div className="flex">
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Your email address"
-                className="bg-black/30 backdrop-blur-sm px-3 py-2 md:px-4 md:py-3 rounded-l-md w-full text-white placeholder:text-gray-500 focus:outline-none text-sm md:text-base"
+                className="bg-black/30 backdrop-blur-sm px-3 py-2 md:px-4 md:py-3 rounded-l-md w-full text-white placeholder:text-gray-500 focus:outline-none focus:ring-1 focus:ring-gray-400 text-sm md:text-base border border-gray-600 border-r-0"
               />
               <button
-                className="bg-gradient-to-r from-gray-200 to-white text-black px-4 py-2 md:px-6 md:py-3 rounded-r-md font-medium whitespace-nowrap text-sm md:text-base"
+                className="bg-gradient-to-r from-gray-200 to-white text-black px-4 py-2 md:px-6 md:py-3 rounded-r-md font-medium whitespace-nowrap text-sm md:text-base border border-gray-600 hover:translate-y-[-1px] hover:shadow-lg transition duration-200"
               >
                 Notify Me
               </button>
             </div>
           </div>
-        </main>
-        
-        {/* Contact section */}
-        <div className="text-center w-full py-3 md:py-4">
-          <div className="flex flex-col md:flex-row gap-2 md:gap-6 justify-center text-sm md:text-base">
-            <a 
-              href="mailto:abrar@lumira.tech"
-              className="text-gray-400 hover:text-white"
-            >
-              abrar@lumira.tech
-            </a>
-            <a 
-              href="mailto:aaqil@lumira.tech"
-              className="text-gray-400 hover:text-white"
-            >
-              aaqil@lumira.tech
-            </a>
+        </section>
+
+        {/* Add other sections here (About, Services, Contact) */}
+        {/* Example About Section */}
+        <section id="about" className="py-20 px-4 text-center min-h-screen flex flex-col items-center justify-center">
+          <h2 className="text-4xl font-bold mb-8 font-aicon-bold">About Us</h2>
+          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+            LUMIRA is dedicated to providing cutting-edge training in the most in-demand technology fields. Our mission is to empower individuals with the skills needed to thrive in the future of technology.
+          </p>
+        </section>
+
+        {/* Example Services Section */}
+        <section id="services" className="py-20 px-4 text-center bg-black/30 min-h-screen flex flex-col items-center justify-center">
+          <h2 className="text-4xl font-bold mb-8 font-aicon-bold">Our Services</h2>
+          <div className="flex flex-wrap justify-center gap-8">
+            <div className="bg-black/50 backdrop-blur-sm p-6 rounded-lg max-w-sm border border-gray-600">
+              <h3 className="text-2xl font-bold mb-4">AI Training</h3>
+              <p className="text-gray-300">Comprehensive courses covering machine learning, deep learning, and AI applications.</p>
+            </div>
+            <div className="bg-black/50 backdrop-blur-sm p-6 rounded-lg max-w-sm border border-gray-600">
+              <h3 className="text-2xl font-bold mb-4">Cloud Computing</h3>
+              <p className="text-gray-300">Hands-on training with major cloud platforms like AWS, Azure, and Google Cloud.</p>
+            </div>
+            <div className="bg-black/50 backdrop-blur-sm p-6 rounded-lg max-w-sm border border-gray-600">
+              <h3 className="text-2xl font-bold mb-4">Cybersecurity</h3>
+              <p className="text-gray-500">Learn to protect digital assets and systems from cyber threats.</p>
+            </div>
           </div>
-        </div>
-      </div>
+        </section>
+
+        {/* Example Contact Section */}
+        <section id="contact" className="py-20 px-4 text-center min-h-screen flex flex-col items-center justify-center">
+           <h2 className="text-4xl font-bold mb-8 font-aicon-bold">Get in Touch</h2>
+           <p className="text-lg text-gray-300 mb-8">
+             Have questions? Reach out to us!
+           </p>
+           <div className="flex flex-col md:flex-row gap-6 justify-center text-lg">
+             <a
+               href="mailto:abrar@lumira.tech"
+               className="text-gray-400 hover:text-white transition duration-300"
+             >
+               abrar@lumira.tech
+             </a>
+             <a
+               href="mailto:aaqil@lumira.tech"
+               className="text-gray-400 hover:text-white transition duration-300"
+             >
+               aaqil@lumira.tech
+             </a>
+           </div>
+         </section>
+
+      </main>
+
+      <Footer />
     </div>
   );
 }
